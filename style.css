@@ -1,0 +1,38 @@
+.calculator {
+    width: 500px;
+    height: 550px;
+    background-color: #000000;
+    border-radius: 3%;
+}
+
+.display{
+    border: 2px  #000000 solid;
+    height: 50px;
+    width: 420px;
+}
+
+.keys{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2px;
+}
+
+.button{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: #616161;
+
+    color: white;
+}
+
+.side-button{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #E6B311 ;
+
+    color: white;
+    border: none;
+}
