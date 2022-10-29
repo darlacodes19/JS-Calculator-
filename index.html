@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>DM Calculator</title>
+    <title>Calculator</title>
 </head>
 <body>
 
@@ -13,37 +13,37 @@
 
 <div class="calculator "> 
     <div class="display">
-
+       <span id="display-view" data-display >  </span> 
     </div>
     <div class="keys">
         
-        <button class="button"> AC </button>
-        <button class="button"> +/- </button>
-        <button class="button"> % </button>
-        <button class="side-button"> / </button>
+        <button class="clear-button top-row" data-all-clear> AC </button>
+        <button class="button top-row"> +/- </button>
+        <button class="button top-row" data-operation> % </button>
+        <button class="side-button" data-operation> / </button>
 
-        <button class="button"> 7 </button>
-        <button class="button"> 8 </button>
-        <button class="button"> 9 </button>
-        <button class="side-button"> x </button>
+        <button class="numbers-button" value="7" data-number> 7 </button>
+        <button class="numbers-button" value="8"  data-number > 8 </button>
+        <button class="numbers-button" value="9" data-number> 9 </button>
+        <button class="operations-button"  data-operation> x </button>
 
-        <button class="button"> 4 </button>
-        <button class="button"> 5 </button>
-        <button class="button"> 6 </button>
-        <button class="side-button"> - </button>
+        <button class="numbers-button" value="4" data-number> 4 </button>
+        <button class="numbers-button" value="5" data-number> 5 </button>
+        <button class="numbers-button" value="6" data-number> 6 </button>
+        <button class="operations-button" data-operation> - </button>
 
-        <button class="button"> 1 </button>
-        <button class="button"> 2 </button>
-        <button class="button"> 3 </button>
-        <button class="side-button"> + </button>
+        <button class="numbers-button" value="1" data-number> 1 </button>
+        <button class="numbers-button" value="2" data-number> 2 </button>
+        <button class="numbers-button" value="3" data-number> 3 </button>
+        <button class="operations-button"  data-operation > + </button>
 
-        <button class="button"> 0 </button>
-        <button class="button"> . </button>
-        <button> = </button>
+        <button class="numbers-button zero" value="0" data-number> 0 </button>
+        <button class="button" data-number> . </button>
+        <button class="equals-button" data-equals> = </button>
         
         
     </div>
 </div>
-    
+<script src="main.js"></script> 
 </body>
 </html>
