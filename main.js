@@ -15,34 +15,59 @@ let displayView = document.getElementById('display-view')
 
 
 let operator = ""
+let prevValue;
+let currentValue;
 
 
 
 //When you have more than one collection of elements, you have to loop thorugh the array of elements 
 numbersButton.forEach(e => {
     e.addEventListener('click', function(e) {
-       displayView.textContent += e.target.value
-       console.log(displayView.textContent)
+        
+       displayView.textContent += e.target.value 
+
+      //  console.log( displayView.textContent)
     });
   });
 
 operationsButton.forEach( e => {
    e.addEventListener('click' , function(e) {
-      displayView.textContent += e.target.value
+      // displayView.textContent += e.target.value
+      prevValue = displayView.textContent
+      
       operator = e.target.value
-      console.log(operator)
+      displayView.textContent = ' '
+      // console.log(operator)
    })
 })
 
 
-equalButton.addEventListener('click', function() {
-   let answer = eval(displayView.textContent)
+equalButton.addEventListener('click', function(e) {
+   currentValue = displayView.textContent
+   // console.log(currentValue)
+   // console.log(prevValue)
+   
+   answer = calculate(prevValue, operator , currentValue)
+   console.log(operator)
    displayView.textContent = answer
 })
 
 allClearButton.addEventListener('click', function() {
       displayView.textContent = ''
 })
+
+
+function calculate (prevValue, operator , currentValue) {
+
+   prevValue = parseInt(prevValue)
+   currentValue = parseInt(currentValue)
+
+   if (operator === '+') return prevValue + currentValue
+   if (operator === '*') return prevValue * currentValue
+   if (operator === '/') return prevValue / currentValue
+   if (operator === '-') return prevValue - currentValue
+   
+}
 
 
 
