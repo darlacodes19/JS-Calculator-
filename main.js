@@ -6,56 +6,15 @@
 
 //QUESTIONS:
 //What does the data attribute do? Why is it helpful?
-//select element you want to manipulate 
 
-
-// 1- Select all numbers button using the data attribute you created 
-   //data attributes must be in brackets
-
-   let numbersButton = document.querySelectorAll('[data-number]')
-
-//2- Select all of the operation buttons
-
-let operationsButton = document.querySelectorAll('[data-operation')
-
-//3- Select the rest of the buttons 
-   //if only one, remember to only choose querySelector 
-
-   let equalButton = document.querySelector('[data-equals')
-   let allClearButton = document.querySelector('[data-all-clear')
-
-
-//4- Select data dispaly 
-
+let numbersButton = document.querySelectorAll('[data-number]')
+let operationsButton = document.querySelectorAll('[data-operation]')
+let equalButton = document.querySelector('[data-equals]')
+let allClearButton = document.querySelector('[data-all-clear]')
 let displayView = document.getElementById('display-view')
 
 
-
-
-
-//Variables
-
-
-
-
-
-//Functions
-
-function add() {
-   
-}
-
-function mulitply() {
-   
-}
-
-function subtract() {
-   
-}
-
-function divide() {
-   
-}
+let operator = ""
 
 
 
@@ -67,11 +26,26 @@ numbersButton.forEach(e => {
     });
   });
 
-operationsButton.map( e => {
-   e.addEventListener('Click' , function(e) {
-      console.log(e.target.value)
+operationsButton.forEach( e => {
+   e.addEventListener('click' , function(e) {
+      displayView.textContent += e.target.value
+      operator = e.target.value
+      console.log(operator)
    })
 })
+
+
+equalButton.addEventListener('click', function() {
+   let answer = eval(displayView.textContent)
+   displayView.textContent = answer
+})
+
+allClearButton.addEventListener('click', function() {
+      displayView.textContent = ''
+})
+
+
+
 
 
 
