@@ -27,8 +27,12 @@ let answer;
 const setTime = () => {
    let currentTime = new Date ()
 
-   timeHour.textContent = currentTime.getHours()
-   timeMinute.textContent = currentTime.getMinutes()
+   timeHour.textContent = currentTime.getHours().toString().padStart(2,0)
+   timeMinute.textContent = currentTime.getMinutes().toString().padStart(2,0)
+
+   if(timeHour.textContent > 12) {
+      timeHour.textContent-=12
+   }
 
 }
 
