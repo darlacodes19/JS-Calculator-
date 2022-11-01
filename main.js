@@ -24,10 +24,17 @@ let answer;
 
 // Set Time
 
-let currentTime = new Date ()
+const setTime = () => {
+   let currentTime = new Date ()
 
-timeHour.textContent = currentTime.getHours()
-timeMinute.textContent = currentTime.getMinutes()
+   timeHour.textContent = currentTime.getHours()
+   timeMinute.textContent = currentTime.getMinutes()
+
+}
+
+
+setInterval(setTime, 1000)
+
 
 
 
