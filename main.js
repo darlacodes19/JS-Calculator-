@@ -12,11 +12,23 @@ let operationsButton = document.querySelectorAll('[data-operation]')
 let equalButton = document.querySelector('[data-equals]')
 let allClearButton = document.querySelector('[data-all-clear]')
 let displayView = document.getElementById('display-view')
+let timeHour = document.querySelector('#time-hour')
+let timeMinute = document.querySelector('#time-minute')
 
-
+let isClicked = 1
 let operator = ""
 let prevValue;
 let currentValue;
+let otherValue;
+let answer;
+
+// Set Time
+
+let currentTime = new Date ()
+
+timeHour.textContent = currentTime.getHours()
+timeMinute.textContent = currentTime.getMinutes()
+
 
 
 
@@ -33,11 +45,27 @@ numbersButton.forEach(e => {
 operationsButton.forEach( e => {
    e.addEventListener('click' , function(e) {
       // displayView.textContent += e.target.value
+      
+      //set whats currently being displayed to the preValue variables 
       prevValue = displayView.textContent
       
+      //set the operator variable to the operator that was clicked 
       operator = e.target.value
+
+      //set the display an empty string every time you click on an operation 
       displayView.textContent = ' '
       // console.log(operator)
+      
+      isClicked++
+
+      if(isClicked > 2) {
+         currentValue = displayView.textContent
+         answer = calculate(prevValue, operator , currentValue)
+         displayView.textContent = answer
+      }
+      
+      //if already clicked 
+      //How do you keep track of the other numbers??? 
    })
 })
 
@@ -48,7 +76,7 @@ equalButton.addEventListener('click', function(e) {
    // console.log(prevValue)
    
    answer = calculate(prevValue, operator , currentValue)
-   console.log(operator)
+   // console.log(operator)
    displayView.textContent = answer
 })
 
